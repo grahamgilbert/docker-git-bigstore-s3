@@ -4,5 +4,5 @@
 echo "$S3_IDENTITY":"$S3_CREDENTIAL" >> /etc/passwd-s3fs
 chmod 600 /etc/passwd-s3fs
 # Mount s3 bucket from environment variable
-mkdir -p /data
-s3fs -o nonempty $S3_BUCKET /data
+mkdir -p ${GIT_DIR}
+s3fs -o nonempty $S3_BUCKET ${GIT_DIR}
